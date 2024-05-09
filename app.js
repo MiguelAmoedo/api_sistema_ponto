@@ -10,8 +10,6 @@ var funcionarioRouter = require('./routes/funcionario');
 var chamadoRouter = require('./routes/chamado');
 var pontoRouter = require('./routes/ponto');
 
-
-
 var app = express();
 
 // CORS
@@ -28,17 +26,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', (req, res) => {
+  res.send('Hello, world!');
+});
+
 app.use('/cliente', clienteRouter);
 app.use('/funcionario', funcionarioRouter);
 app.use('/chamado', chamadoRouter);
 app.use('/ponto', pontoRouter);
 
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 
 module.exports = app;
