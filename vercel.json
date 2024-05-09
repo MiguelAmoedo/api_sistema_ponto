@@ -1,46 +1,15 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/cliente",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/cliente/(.*)",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/funcionario",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/funcionario/(.*)",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/chamado",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/chamado/(.*)",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/ponto",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/ponto/(.*)",
-      "dest": "/app.js"
-    }
-  ]
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/app.js"
+      }
+    ]
+  }
