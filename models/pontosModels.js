@@ -4,9 +4,9 @@ const Joi = require('joi');
 
 require('dotenv').config();
 
-const MONGO_ACCESS = process.env.MONGO_ACCESS;
 
-mongoose.connect(MONGO_ACCESS, {
+
+mongoose.connect("mongodb+srv://sdti:sdti2024@suporte.ktkybui.mongodb.net/?retryWrites=true&w=majority&appName=suporte", {
   useNewUrlParser: true,
 
 })
