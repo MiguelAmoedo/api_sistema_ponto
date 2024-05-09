@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 var clienteRouter = require('./routes/cliente');
 var funcionarioRouter = require('./routes/funcionario');
@@ -12,13 +13,18 @@ var pontoRouter = require('./routes/ponto');
 
 
 
+
+require('dotenv').config({path: __dirname + '/.env' })
 var app = express();
 
-// CORS
-app.use(cors({origin:'http://localhost:3000'}));
-app.options('*', cors());
 
-// view engine setup
+
+// CORS
+app.use(cors());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// view engine setup'
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
