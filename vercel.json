@@ -7,22 +7,10 @@
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/cliente(.*)",
-      "dest": "/cliente$1"
-    },
-    {
-      "src": "/funcionario(.*)",
-      "dest": "/funcionario$1"
-    },
-    {
-      "src": "/chamado(.*)",
-      "dest": "/chamado$1"
-    },
-    {
-      "src": "/ponto(.*)",
-      "dest": "/ponto$1"
-    }
+    { "src": "/cliente/(.*)", "dest": "/routes/cliente.js" },
+    { "src": "/funcionario/(.*)", "dest": "/routes/funcionario.js" },
+    { "src": "/chamado/(.*)", "dest": "/routes/chamado.js" },
+    { "src": "/ponto/(.*)", "dest": "/routes/ponto.js" },
+    { "src": "/(.*)", "dest": "/app.js" }
   ]
 }
