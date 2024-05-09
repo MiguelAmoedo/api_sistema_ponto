@@ -7,10 +7,9 @@
     }
   ],
   "routes": [
-    { "src": "/cliente/(.*)", "dest": "/routes/cliente.js" },
-    { "src": "/funcionario/(.*)", "dest": "/routes/funcionario.js" },
-    { "src": "/chamado/(.*)", "dest": "/routes/chamado.js" },
-    { "src": "/ponto/(.*)", "dest": "/routes/ponto.js" },
-    { "src": "/(.*)", "dest": "/app.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
   ]
 }
